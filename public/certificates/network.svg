@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1236" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#e2e0d8"/>
+    </pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f5ff"/>
+      <stop offset="1" stop-color="#f6f5f1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1236" fill="url(#bg)"/>
+  <rect width="1600" height="1236" fill="url(#dots)"/>
+
+  <!-- Label -->
+  <text x="80" y="110" font-size="30" font-weight="700" letter-spacing="6" fill="#101218">NETWORK FUNDAMENTAL</text>
+  <text x="80" y="155" font-size="24" fill="#6b7080">topology · routing · failover · vlan</text>
+
+  <!-- Links -->
+  <g stroke="#2f4dff" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M800 320 V 500"/>
+    <path d="M800 640 V 760"/>
+    <path d="M800 860 V 920 H 380 V 990"/>
+    <path d="M800 860 V 990"/>
+    <path d="M800 920 H 1220 V 990"/>
+  </g>
+  <path d="M1250 470 C 1150 560, 1040 575, 950 575" stroke="#f97316" stroke-width="6" stroke-dasharray="18 14" fill="none" stroke-linecap="round"/>
+
+  <!-- Internet -->
+  <g transform="translate(800 260)">
+    <path d="M-150 60 a70 70 0 0 1 20 -137 a95 95 0 0 1 180 -20 a75 75 0 0 1 110 70 a65 65 0 0 1 -10 87 Z" fill="#ffffff" stroke="#101218" stroke-width="5"/>
+    <text y="30" text-anchor="middle" font-size="30" font-weight="700" fill="#101218">INTERNET</text>
+    <text y="-10" text-anchor="middle" font-size="22" fill="#6b7080">ISP · WAN</text>
+  </g>
+
+  <!-- LTE tower -->
+  <g transform="translate(1290 300)">
+    <path d="M0 0 L-60 170 M0 0 L60 170 M-40 115 H40 M-24 60 H24" stroke="#101218" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="12" fill="#f97316"/>
+    <path d="M-40 -30 a50 50 0 0 1 80 0 M-70 -55 a90 90 0 0 1 140 0" stroke="#f97316" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <text x="0" y="215" text-anchor="middle" font-size="26" font-weight="700" fill="#101218">LTE 4G/5G</text>
+    <text x="0" y="250" text-anchor="middle" font-size="22" fill="#f97316">backup · failover</text>
+  </g>
+
+  <!-- Router -->
+  <g transform="translate(800 570)">
+    <rect x="-150" y="-70" width="300" height="140" rx="22" fill="#101218"/>
+    <rect x="-150" y="52" width="300" height="18" rx="0" fill="#2f4dff"/>
+    <g fill="#34d399">
+      <circle cx="-100" cy="-25" r="9"/><circle cx="-70" cy="-25" r="9"/><circle cx="-40" cy="-25" r="9"/>
+    </g>
+    <g fill="#3d424f">
+      <rect x="0" y="-38" width="30" height="26" rx="4"/><rect x="40" y="-38" width="30" height="26" rx="4"/><rect x="80" y="-38" width="30" height="26" rx="4"/>
+    </g>
+    <text x="0" y="30" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">ROUTER · MikroTik</text>
+  </g>
+
+  <!-- Switch -->
+  <g transform="translate(800 810)">
+    <rect x="-200" y="-50" width="400" height="100" rx="18" fill="#ffffff" stroke="#101218" stroke-width="5"/>
+    <g fill="#2f4dff">
+      <rect x="-170" y="-22" width="34" height="26" rx="4"/><rect x="-124" y="-22" width="34" height="26" rx="4"/><rect x="-78" y="-22" width="34" height="26" rx="4"/><rect x="-32" y="-22" width="34" height="26" rx="4"/>
+    </g>
+    <g fill="#e2e0d8">
+      <rect x="14" y="-22" width="34" height="26" rx="4"/><rect x="60" y="-22" width="34" height="26" rx="4"/><rect x="106" y="-22" width="34" height="26" rx="4"/>
+    </g>
+    <text x="0" y="36" text-anchor="middle" font-size="20" fill="#6b7080">SWITCH · 802.1Q</text>
+  </g>
+
+  <!-- Clients -->
+  <g font-size="22" text-anchor="middle">
+    <g transform="translate(380 1050)">
+      <rect x="-80" y="-60" width="160" height="100" rx="12" fill="#ffffff" stroke="#101218" stroke-width="5"/>
+      <rect x="-30" y="40" width="60" height="16" fill="#101218"/>
+      <text y="100" font-weight="700" fill="#101218">VLAN 10</text>
+      <text y="132" fill="#6b7080">192.168.10.0/24</text>
+    </g>
+    <g transform="translate(800 1050)">
+      <rect x="-80" y="-60" width="160" height="100" rx="12" fill="#ffffff" stroke="#101218" stroke-width="5"/>
+      <rect x="-30" y="40" width="60" height="16" fill="#101218"/>
+      <text y="100" font-weight="700" fill="#101218">VLAN 20</text>
+      <text y="132" fill="#6b7080">192.168.20.0/24</text>
+    </g>
+    <g transform="translate(1220 1050)">
+      <rect x="-80" y="-60" width="160" height="100" rx="12" fill="#ffffff" stroke="#101218" stroke-width="5"/>
+      <rect x="-30" y="40" width="60" height="16" fill="#101218"/>
+      <text y="100" font-weight="700" fill="#101218">VLAN 30</text>
+      <text y="132" fill="#6b7080">192.168.30.0/24</text>
+    </g>
+  </g>
+</svg>
