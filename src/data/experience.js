@@ -1,0 +1,47 @@
+export const experience = [
+  {
+    role: "Software Developer · Penelitian Skripsi",
+    company: "PT. Koperasi Konsumen Pegawai Pos Indonesia",
+    location: "Indonesia",
+    period: "2025 – 2026",
+    category: "Software Development & Research",
+    description: "Melakukan penelitian dan pengembangan sistem presensi karyawan berbasis Face Recognition dan Geolocation.",
+    points: [
+      "Mengimplementasikan Haversine Formula untuk validasi lokasi presensi karyawan.",
+      "Menerapkan Face Recognition dan Euclidean Distance untuk verifikasi identitas karyawan.",
+      "Mengembangkan sistem menggunakan JavaScript, Laravel Filament, dan MySQL.",
+      "Membangun fitur presensi, validasi lokasi, verifikasi wajah, riwayat, pengajuan izin, dan pengelolaan data presensi.",
+    ],
+    tags: ["Laravel Filament", "JavaScript", "MySQL", "Face Recognition", "Geolocation"],
+  },
+  {
+    role: "Technical Support (Magang)",
+    company: "PT. Perdana Global Internet",
+    location: "Indonesia",
+    period: "Sep 2025 – Nov 2025",
+    category: "Networking & IT Support",
+    description: "Melakukan instalasi dan konfigurasi perangkat jaringan untuk menjaga koneksi client tetap stabil.",
+    points: [
+      "Instalasi dan konfigurasi perangkat jaringan MikroTik dan Ruijie.",
+      "Setup koneksi LTE untuk perangkat M2M dan client-site menggunakan router 4G/5G.",
+      "Konfigurasi failover dan manajemen bandwidth pada router MikroTik.",
+      "Bekerja sama dengan tim agar perangkat berjalan baik dan konfigurasinya terdokumentasi.",
+    ],
+    tags: ["MikroTik", "Ruijie", "LTE/4G/5G", "Failover", "Bandwidth Management"],
+  },
+  {
+    role: "Web Developer (Magang)",
+    company: "PT. Meissa Berkah Teknologi",
+    location: "Indonesia",
+    period: "Sep 2024 – Januari 2025",
+    category: "Web Development",
+    description: "Terlibat langsung dalam pengembangan dan pemeliharaan aplikasi berbasis web, baik frontend maupun backend.",
+    points: [
+      "Membuat tampilan website (frontend) menggunakan HTML, CSS, dan JavaScript.",
+      "Mengelola logika sistem dan database (backend) menggunakan PHP dan MySQL.",
+      "Membangun sistem login dan fitur CRUD (Create, Read, Update, Delete).",
+      "Melakukan pemeliharaan dan perbaikan aplikasi web yang sudah berjalan.",
+    ],
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "CRUD"],
+  },
+];
