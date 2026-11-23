@@ -1,7 +1,7 @@
 export const profile = {
   name: "Giovedi Rahmat Prabowo",
   title: "Fullstack Developer",
-  tagline: "Lulusan Teknik Informatika Universitas Budi Luhur. SSoftware Developer dengan keahlian lintas platform di bidang Full-Stack Web dan Mobile Engineering. Terbiasa merancang dan mendeploy aplikasi menggunakan stack modern (Laravel, React, Node.js, serta pengembangan mobile), didukung pemahaman mendalam terkait manajemen database (MySQL, PostgreSQL) dan jaringan dasar.",
+  tagline: "Lulusan Teknik Informatika Universitas Budi Luhur. Software Developer dengan keahlian lintas platform di bidang Full-Stack Web dan Mobile Engineering. Terbiasa merancang dan mendeploy aplikasi menggunakan stack modern (Laravel, React, Node.js, serta pengembangan mobile), didukung pemahaman mendalam terkait manajemen database (MySQL, PostgreSQL) dan jaringan dasar.",
   cv: "/cv.pdf",
   email: "praboworahmat10@gmail.com",
   phone: "085824070637",
@@ -18,7 +18,7 @@ export const profile = {
     { label: "IPK", value: "3.46", desc: "S1 Teknik Informatika" },
     { label: "Magang", value: "2", desc: "Web Developer & Technical Support" },
     { label: "Proyek", value: "3", desc: "Web & jaringan" },
-    { label: "Sertifikasi", value: "3", desc: "Jaringan, algoritma & AI" },
+    { label: "Sertifikasi", value: "4", desc: "Jaringan, algoritma & AI" },
   ],
   about: {
     headline: "Full-Stack & Mobile Developer dengan Pemahaman Jaringan.",

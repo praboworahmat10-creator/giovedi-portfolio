@@ -64,13 +64,13 @@ export default function Navbar() {
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors ${
-                  active === item.href ? "text-white" : "text-ink-soft hover:text-ink"
+                  active === item.href ? "text-[#0b0b0d]" : "text-ink-soft hover:text-ink"
                 }`}
               >
                 {active === item.href && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-0 rounded-full bg-ink"
+                    className="absolute inset-0 rounded-full bg-accent"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -92,7 +92,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full bg-accent text-white hover:bg-accent-hover transition-colors"
+              className="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full bg-accent text-[#0b0b0d] hover:bg-accent-hover transition-colors"
             >
               Hubungi
             </a>

@@ -1,14 +1,32 @@
-import { motion, useScroll, useSpring } from "motion/react";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollProgress() {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 26, restDelta: 0.001 });
+  const barRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.set(barRef.current, { scaleX: 0 });
+    gsap.to(barRef.current, {
+      scaleX: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.documentElement,
+        start: "top top",
+        end: "max",
+        scrub: true,
+      },
+    });
+  }, { scope: barRef });
 
   return (
-    <motion.div
+    <div
+      ref={barRef}
       aria-hidden="true"
       className="fixed top-0 left-0 right-0 h-[2px] bg-accent origin-left z-[60]"
-      style={{ scaleX }}
     />
   );
 }

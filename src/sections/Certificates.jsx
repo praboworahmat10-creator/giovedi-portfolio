@@ -14,7 +14,7 @@ function CertificateCard({ cert, index, onOpen }) {
         <button
           type="button"
           onClick={onOpen}
-          className="block w-full overflow-hidden rounded-2xl border border-line bg-white shadow-[0_20px_40px_-24px_rgba(16,18,24,0.35)] cursor-zoom-in"
+          className="block w-full overflow-hidden rounded-2xl border border-line bg-[#1c1c20] shadow-[0_20px_40px_-24px_rgba(0,0,0,0.65)] cursor-zoom-in"
           aria-label={`Perbesar sertifikat ${cert.title}`}
         >
           <motion.img
@@ -26,7 +26,7 @@ function CertificateCard({ cert, index, onOpen }) {
           />
         </button>
       ) : (
-        <div className="w-full aspect-[1600/1236] rounded-2xl border border-dashed border-ink/20 bg-white/50 flex items-center justify-center p-6 text-center">
+        <div className="w-full aspect-[1600/1236] rounded-2xl border border-dashed border-line bg-[#1c1c20]/90 flex items-center justify-center p-6 text-center">
           <p className="font-mono text-xs text-muted">Gambar sertifikat menyusul</p>
         </div>
       )}
@@ -92,7 +92,7 @@ export default function Certificates() {
             <button
               type="button"
               onClick={() => setActive(null)}
-              className="absolute top-4 right-4 p-2.5 rounded-full bg-white text-ink hover:bg-paper transition-colors"
+              className="absolute top-4 right-4 p-2.5 rounded-full bg-[#17171a] text-ink border border-line hover:border-accent hover:text-accent transition-colors"
               aria-label="Tutup"
             >
               <CloseIcon className="w-5 h-5" />

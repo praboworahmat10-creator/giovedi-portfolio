@@ -101,7 +101,7 @@ export default function Hero() {
               <a
                 href={profile.cv}
                 download
-                className="group inline-flex items-center gap-2.5 pl-5 pr-6 py-3.5 rounded-full bg-ink text-white text-sm font-semibold hover:bg-accent transition-colors"
+                className="group inline-flex items-center gap-2.5 pl-5 pr-6 py-3.5 rounded-full bg-accent text-[#0b0b0d] text-sm font-semibold hover:bg-accent-hover transition-colors"
               >
                 <DownloadIcon className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
                 Download CV

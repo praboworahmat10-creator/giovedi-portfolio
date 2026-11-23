@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: 'Bricolage Grotesque', sans-serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Satoshi', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  /* Palet: kertas hangat, tinta gelap, satu aksen cobalt */
-  --color-paper: #f6f5f1;
-  --color-ink: #101218;
-  --color-ink-soft: #3d424f;
-  --color-muted: #6b7080;
-  --color-line: #e2e0d8;
-  --color-accent: #2f4dff;
-  --color-accent-hover: #1f38d6;
-  --color-accent-muted: #e8ecff;
+  /* Palet dark editorial: soft black, grey, dan sentuhan orange */
+  --color-paper: #0b0b0d;
+  --color-ink: #ffffff;
+  --color-ink-soft: #c4c4ca;
+  --color-muted: #97979f;
+  --color-line: #34343a;
+  --color-accent: #f97316;
+  --color-accent-hover: #ea580c;
+  --color-accent-muted: #2a1a12;
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
@@ -27,16 +27,19 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
+  font-weight: 400;
   background-color: var(--color-paper);
   color: var(--color-ink);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: #fff;
+  background: #47474f;
+  color: #ffffff;
 }
 
 h1,
@@ -47,10 +50,12 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--color-ink);
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 /* =========================================
-   BACKGROUND: grid kertas + sorotan kursor
+   BACKGROUND: soft black + subtle grey dot matrix
    ========================================= */
 
 .bg-anim {
@@ -58,64 +63,10 @@ h6 {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-color: var(--color-paper);
-  contain: strict;
-}
-
-.bg-grid {
-  position: absolute;
-  inset: 0;
-  background-size: 56px 56px;
-  background-image:
-    linear-gradient(to right, rgba(16, 18, 24, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 18, 24, 0.06) 1px, transparent 1px);
-}
-
-/* Gradasi pastel lembut di belakang grid */
-.bg-mesh {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(45% 50% at 10% 15%, rgba(116, 140, 255, 0.5), transparent 70%),
-    radial-gradient(40% 46% at 90% 20%, rgba(110, 214, 172, 0.45), transparent 70%),
-    radial-gradient(46% 50% at 72% 80%, rgba(255, 170, 130, 0.42), transparent 70%),
-    radial-gradient(38% 42% at 18% 86%, rgba(250, 210, 110, 0.36), transparent 70%),
-    radial-gradient(30% 34% at 50% 50%, rgba(170, 150, 255, 0.22), transparent 70%);
-}
-
-/* Grid beraksen yang hanya terlihat di sekitar kursor.
-   Lingkarannya digeser dengan transform (bukan mengubah mask), jadi tidak ada repaint saat mouse bergerak. */
-.bg-grid-lit {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 560px;
-  height: 560px;
-  overflow: hidden;
-  -webkit-mask-image: radial-gradient(closest-side, #000, transparent);
-  mask-image: radial-gradient(closest-side, #000, transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  will-change: transform;
-}
-
-.bg-grid-lit-inner {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: 56px 56px;
-  background-image:
-    linear-gradient(to right, rgba(47, 77, 255, 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(47, 77, 255, 0.35) 1px, transparent 1px);
-  will-change: transform;
-}
-
-@media (hover: none) {
-  .bg-grid-lit {
-    display: none;
-  }
+  background-color: #0b0b0d;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.105) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 12px 12px;
 }
 
 /* Logo melayang di sekitar kartu ID (CSS agar jalan di compositor) */
@@ -192,9 +143,9 @@ h6 {
   background: var(--color-paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cfccc2;
+  background: #3f3f46;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a9a59a;
+  background: #f97316;
 }

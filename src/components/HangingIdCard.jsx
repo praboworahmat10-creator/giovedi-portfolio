@@ -168,10 +168,10 @@ export default function HangingIdCard({ profile, skills = [] }) {
             onPointerMove={handlePointerMove}
             onPointerLeave={resetTilt}
             style={{ rotateX: tiltX, rotateY: tiltY, transformPerspective: 900 }}
-            className="relative overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-[0_30px_60px_-20px_rgba(16,18,24,0.35)]"
+            className="relative overflow-hidden rounded-3xl bg-[#1b1b1f] border border-[#3a3a40] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.65)]"
           >
             {/* Header */}
-            <div className="relative h-24 bg-ink">
+            <div className="relative h-24 bg-[#242428] border-b border-[#45454b]">
                             <div className="absolute left-0 right-0 bottom-0 h-1 bg-accent" />
               <p className="absolute top-4 left-5 text-[10px] font-mono font-bold tracking-[0.2em] text-white/80">
                 DEVELOPER ID
@@ -188,10 +188,10 @@ export default function HangingIdCard({ profile, skills = [] }) {
                   src={profile.avatar}
                   alt={`Foto ${profile.name}`}
                   draggable={false}
-                  className="w-28 h-36 object-cover object-top rounded-2xl border-4 border-white shadow-md bg-slate-100"
+                  className="w-28 h-36 object-cover object-top rounded-2xl border-4 border-[#e5e5e5] shadow-md bg-[#27272a]"
                 />
               ) : (
-                <div className="w-28 h-36 rounded-2xl border-4 border-white shadow-md bg-blue-600" />
+                <div className="w-28 h-36 rounded-2xl border-4 border-[#e5e5e5] shadow-md bg-accent" />
               )}
             </div>
 
@@ -201,9 +201,7 @@ export default function HangingIdCard({ profile, skills = [] }) {
                 {profile.name}
               </h2>
               <p className="mt-1 text-sm font-semibold text-accent">{profile.title}</p>
-              <p className="mt-1 text-[11px] text-slate-500 font-medium">
-                S1 Teknik Informatika • Universitas Budi Luhur
-              </p>
+              <p className="mt-1 text-[11px] text-[#a7a7ae] font-medium">                S1 Teknik Informatika • Universitas Budi Luhur              </p>
 
               {skills.length > 0 && (
                 <div className="mt-4 flex flex-wrap justify-center gap-1.5">
@@ -218,12 +216,12 @@ export default function HangingIdCard({ profile, skills = [] }) {
                 </div>
               )}
 
-              <div className="mt-4 pt-3 border-t border-dashed border-slate-200 flex items-center justify-between text-[11px]">
-                <span className="inline-flex items-center gap-1 text-slate-500">
+              <div className="mt-4 pt-3 border-t border-dashed border-[#3f3f46] flex items-center justify-between text-[11px]">
+                <span className="inline-flex items-center gap-1 text-[#a1a1aa]">
                   <LocationIcon className="w-3 h-3 text-slate-400" />
                   {profile.address}, Tangerang
                 </span>
-                <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-700">
+                <span className="inline-flex items-center gap-1.5 font-semibold text-accent">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   Open to work
                 </span>
@@ -232,7 +230,7 @@ export default function HangingIdCard({ profile, skills = [] }) {
               {/* Barcode dekoratif */}
               <div className="mt-3 flex items-end justify-center gap-[2px] h-6 opacity-70" aria-hidden="true">
                 {"1101001011101001101011100101101".split("").map((bit, i) => (
-                  <span key={i} className={`bg-slate-800 ${bit === "1" ? "w-[2px]" : "w-px"} h-full`} />
+                  <span key={i} className={`bg-[#52525b] ${bit === "1" ? "w-[2px]" : "w-px"} h-full`} />
                 ))}
               </div>
             </div>
@@ -245,7 +243,7 @@ export default function HangingIdCard({ profile, skills = [] }) {
         </motion.div>
       </motion.div>
 
-      <p className="mt-5 text-center text-[11px] text-slate-400 font-medium">
+      <p className="mt-5 text-center text-[11px] text-muted font-medium">
         Tarik kartunya ↔
       </p>
     </div>

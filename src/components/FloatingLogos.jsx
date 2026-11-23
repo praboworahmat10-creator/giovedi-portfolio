@@ -34,7 +34,7 @@ export default function FloatingLogos() {
             className="group relative cursor-grab"
           >
             <div
-              className="float-bob w-14 h-14 rounded-2xl bg-white border border-line shadow-[0_12px_30px_-12px_rgba(16,18,24,0.35)] flex items-center justify-center"
+              className="float-bob w-14 h-14 rounded-2xl bg-[#222226] border border-line shadow-[0_12px_30px_-12px_rgba(0,0,0,0.65)] flex items-center justify-center"
               style={{ animationDuration: `${3.2 + (i % 3) * 0.6}s`, animationDelay: `${i * 0.3}s` }}
             >
               <svg viewBox="0 0 24 24" className="w-7 h-7" fill={logo.color}>

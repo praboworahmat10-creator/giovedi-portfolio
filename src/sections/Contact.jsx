@@ -171,7 +171,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-ink text-white text-sm font-semibold hover:bg-accent transition-colors disabled:opacity-60"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent text-[#0b0b0d] text-sm font-semibold hover:bg-accent-hover transition-colors disabled:opacity-60"
               >
                 {isSubmitting ? "Mengirim..." : "Kirim pesan"}
                 <SendIcon className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
