@@ -11,9 +11,9 @@ import {
 } from "motion/react";
 import { LocationIcon } from "./ui/Icons.jsx";
 
-const STAGE_WIDTH = 340;
-const STRAP_LENGTH = 130;
-const CARD_WIDTH = 280;
+const STAGE_WIDTH = 360;
+const STRAP_LENGTH = 92;
+const CARD_WIDTH = 320;
 const CARD_YEAR = new Date().getFullYear();
 
 // Kartu ID yang tergantung pada tali: bisa ditarik, berayun, lalu memantul kembali.
@@ -104,8 +104,8 @@ export default function HangingIdCard({ profile, skills = [] }) {
       <motion.div
         className="relative mx-auto"
         style={{ width: STAGE_WIDTH, maxWidth: "100%", paddingTop: STRAP_LENGTH, transformOrigin: "50% 0%" }}
-        animate={idle ? { rotate: [-1.2, 1.2, -1.2] } : { rotate: 0 }}
-        transition={idle ? { duration: 5, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
+        animate={idle ? { rotate: [-0.7, 0.7, -0.7] } : { rotate: 0 }}
+        transition={idle ? { duration: 7, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
       >
         {/* Titik gantung */}
         <div className="absolute left-1/2 -top-2 -translate-x-1/2 z-20 w-8 h-4 rounded-full bg-slate-300 border border-slate-400/60 shadow-inner" />
@@ -171,7 +171,7 @@ export default function HangingIdCard({ profile, skills = [] }) {
             className="relative overflow-hidden rounded-3xl bg-[#1b1b1f] border border-[#3a3a40] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.65)]"
           >
             {/* Header */}
-            <div className="relative h-24 bg-[#242428] border-b border-[#45454b]">
+            <div className="relative h-24 bg-[linear-gradient(135deg,#242428,#1c1c20)] border-b border-[#45454b]">
                             <div className="absolute left-0 right-0 bottom-0 h-1 bg-accent" />
               <p className="absolute top-4 left-5 text-[10px] font-mono font-bold tracking-[0.2em] text-white/80">
                 DEVELOPER ID
@@ -188,10 +188,10 @@ export default function HangingIdCard({ profile, skills = [] }) {
                   src={profile.avatar}
                   alt={`Foto ${profile.name}`}
                   draggable={false}
-                  className="w-28 h-36 object-cover object-top rounded-2xl border-4 border-[#e5e5e5] shadow-md bg-[#27272a]"
+                  className="w-32 h-40 object-cover object-top rounded-2xl border-4 border-[#e5e5e5] shadow-[0_16px_28px_-16px_rgba(0,0,0,0.85)] bg-[#27272a]"
                 />
               ) : (
-                <div className="w-28 h-36 rounded-2xl border-4 border-[#e5e5e5] shadow-md bg-accent" />
+                <div className="w-32 h-40 rounded-2xl border-4 border-[#e5e5e5] shadow-md bg-accent" />
               )}
             </div>
 
@@ -201,7 +201,9 @@ export default function HangingIdCard({ profile, skills = [] }) {
                 {profile.name}
               </h2>
               <p className="mt-1 text-sm font-semibold text-accent">{profile.title}</p>
-              <p className="mt-1 text-[11px] text-[#a7a7ae] font-medium">                S1 Teknik Informatika • Universitas Budi Luhur              </p>
+              <p className="mt-1 text-[11px] text-[#a7a7ae] font-medium"
+
+>                S1 Teknik Informatika • Universitas Budi Luhur              </p>
 
               {skills.length > 0 && (
                 <div className="mt-4 flex flex-wrap justify-center gap-1.5">
@@ -243,8 +245,8 @@ export default function HangingIdCard({ profile, skills = [] }) {
         </motion.div>
       </motion.div>
 
-      <p className="mt-5 text-center text-[11px] text-muted font-medium">
-        Tarik kartunya ↔
+      <p className="mt-3 text-center text-[10px] font-mono uppercase tracking-[0.18em] text-muted/70">
+        Interactive profile
       </p>
     </div>
   );

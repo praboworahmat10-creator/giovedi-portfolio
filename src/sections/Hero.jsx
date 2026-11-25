@@ -93,7 +93,7 @@ export default function Hero() {
               <span className="text-muted">~/</span> <Typewriter words={ROLES} />
             </motion.p>
 
-            <motion.p {...anim(0.45)} className="mt-6 text-base sm:text-lg text-ink-soft leading-relaxed max-w-xl">
+            <motion.p {...anim(0.45)} className="mt-6 text-base sm:text-lg text-ink-soft text-left leading-relaxed max-w-xl">
               {profile.tagline}
             </motion.p>
 

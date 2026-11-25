@@ -22,7 +22,7 @@ function Entry({ period, title, org, location, description, points = [], tags = 
           {org}
           {location && <span className="text-muted"> · {location}</span>}
         </p>
-        {description && <p className="mt-4 text-base text-ink-soft leading-relaxed max-w-2xl">{description}</p>}
+        {description && <p className="mt-4 text-base text-ink-soft text-left leading-relaxed max-w-2xl">{description}</p>}
         {points.length > 0 && (
           <ul className="mt-4 space-y-2 max-w-2xl">
             {points.map((point) => (
