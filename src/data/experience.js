@@ -1,9 +1,25 @@
 export const experience = [
   {
+    role: "Fullstack Developer",
+    company: "PT. Handal Guna Sarana (HGS)",
+    location: "Indonesia",
+    period: "Juli 2026 – November 2026",
+    category: "Full-Stack Web Development",
+    description: "Mengembangkan, memelihara, dan mengoptimalkan ekosistem perangkat lunak perusahaan lintas aplikasi web dan desktop.",
+    points: [
+      "Merancang dan memelihara aplikasi berbasis web dan desktop menggunakan PHP (Laravel), C#, dan JavaScript.",
+      "Menerapkan arsitektur REST API serta mengelola administrasi dan optimasi database relasional MySQL/PostgreSQL.",
+      "Mengecek keluaran transaksi data harian.",
+      "Melakukan troubleshooting, perbaikan bug, dan peningkatan performa sistem.",
+      "Berkoordinasi lintas divisi dalam implementasi pengembangan fitur.",
+    ],
+    tags: ["Laravel", "C#", "JavaScript", "REST API", "MySQL", "PostgreSQL"],
+  },
+  {
     role: "Software Developer · Penelitian Skripsi",
     company: "PT. Koperasi Konsumen Pegawai Pos Indonesia",
     location: "Indonesia",
-    period: "2025 – 2026",
+    period: "Desember 2025 – Agustus 2026",
     category: "Software Development & Research",
     description: "Melakukan penelitian dan pengembangan sistem presensi karyawan berbasis Face Recognition dan Geolocation.",
     points: [

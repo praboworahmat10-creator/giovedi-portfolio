@@ -47,7 +47,7 @@ export default function Experience() {
   const lineScale = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="experience" className="relative py-24 sm:py-32">
+    <section id="experience" className="relative py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading index="02" label="Pengalaman" title="Tempat saya belajar sambil bekerja.">
           Dua kali magang dan satu penelitian tugas akhir, di bidang pengembangan web dan instalasi jaringan di lapangan.

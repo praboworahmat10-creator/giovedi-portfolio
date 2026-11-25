@@ -164,7 +164,7 @@ export default function Hero() {
 
         {/* Stats strip */}
         {profile.stats?.length > 0 && (
-          <dl className="mt-20 grid grid-cols-2 lg:grid-cols-4 border-y border-line">
+          <dl className="mt-14 grid grid-cols-2 lg:grid-cols-4 border-y border-line">
             {profile.stats.map((stat, i) => {
               const numericMatch = String(stat.value).match(/^(\d+(\.\d+)?)/);
               const numericVal = numericMatch ? parseFloat(numericMatch[1]) : null;
@@ -202,7 +202,7 @@ export default function Hero() {
       </div>
 
       {/* Skill marquee */}
-      <div className="mt-14 space-y-1" aria-label="Daftar keahlian">
+      <div className="mt-10 space-y-1" aria-label="Daftar keahlian">
         <Marquee items={skillNames.slice(0, half)} />
         <Marquee items={skillNames.slice(half)} reverse />
       </div>

@@ -6,13 +6,13 @@ import { ExternalLinkIcon, GithubIcon } from "../components/ui/Icons.jsx";
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 sm:py-32">
+    <section id="projects" className="relative py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading index="03" label="Proyek" title="Yang sudah saya bangun.">
           Sistem presensi dari tugas akhir, aplikasi web saat magang, dan konfigurasi jaringan di lapangan.
         </SectionHeading>
 
-        <div className="space-y-24 sm:space-y-32">
+        <div className="space-y-14 sm:space-y-20">
           {projects.map((project, i) => {
             const flipped = i % 2 === 1;
             return (

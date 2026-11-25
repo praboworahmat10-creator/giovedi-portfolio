@@ -3,7 +3,7 @@ import Reveal from "./Reveal.jsx";
 // Judul section bernomor + paragraf pendek opsional.
 export default function SectionHeading({ index, label, title, children }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-14 sm:mb-20">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-10 sm:mb-16">
       <Reveal className="lg:col-span-3">
         <p className="font-mono text-xs text-muted flex items-center gap-3">
           <span className="text-accent">{index}</span>

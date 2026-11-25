@@ -56,7 +56,7 @@ export default function Certificates() {
   }, [active]);
 
   return (
-    <section id="certificates" className="relative py-24 sm:py-32">
+    <section id="certificates" className="relative py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading index="04" label="Sertifikasi" title="Sertifikat & pelatihan." />
 

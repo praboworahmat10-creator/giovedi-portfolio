@@ -77,13 +77,13 @@ export default function Contact() {
     `${inputClass} ${errors[name] ? "border-rose-500" : "border-ink/20 focus:border-accent"}`;
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="relative py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading index="05" label="Kontak" title="Mari ngobrol.">
           Sedang mencari developer untuk tim Anda atau ingin diskusi proyek? Kirim email atau isi form di bawah.
         </SectionHeading>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10">
           <div className="lg:col-start-4 lg:col-span-4">
             <Reveal>
               <a

@@ -25,11 +25,11 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 sm:py-32">
+    <section id="about" className="relative py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading index="01" label="Tentang" title={<>Developer yang juga<br className="hidden sm:block" /> paham jaringannya.</>} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           <div className="lg:col-start-4 lg:col-span-5">
             <Reveal>
               <p className="text-xl sm:text-2xl font-heading font-medium leading-snug text-ink">
@@ -56,7 +56,7 @@ export default function About() {
         </div>
 
         {/* Keahlian */}
-        <div className="mt-28">
+        <div className="mt-16">
           <Reveal>
             <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">Keahlian</h3>
           </Reveal>

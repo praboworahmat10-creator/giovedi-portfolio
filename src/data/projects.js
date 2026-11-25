@@ -82,4 +82,31 @@ export const projects = [
       "Dokumentasi konfigurasi perangkat bersama tim.",
     ],
   },
+  {
+    title: "E-Commerce Mahiya & Co. dengan Live Tracking Kurir",
+    subtitle: "Mahiya & Co.",
+    description: "Pengembangan aplikasi E-Commerce menggunakan metode Waterfall dengan fitur pemesanan, pengelolaan transaksi, dan pelacakan kurir secara langsung bagi pengguna.",
+    stack: ["Laravel", "PHP", "JavaScript", "MySQL", "PostgreSQL"],
+    live: "",
+    repo: "",
+    period: "2026",
+    code: {
+      file: "LiveTracking.php",
+      lines: [
+        "// memperbarui posisi kurir",
+        "$courier->update(['latitude' => $request->latitude,",
+        "                  'longitude' => $request->longitude]);",
+        "",
+        "// pengguna dapat melihat posisi kurir",
+        "$tracking = $courier->latestLocation();",
+        "return response()->json($tracking);",
+      ],
+    },
+    details: [
+      "Membangun aplikasi E-Commerce dengan tahapan analisis, perancangan, implementasi, pengujian, dan pemeliharaan metode Waterfall.",
+      "Mengembangkan fitur transaksi dan pengelolaan pesanan menggunakan Laravel, PHP, dan JavaScript.",
+      "Menerapkan live tracking kurir agar pengguna dapat memantau posisi pengiriman secara langsung.",
+      "Mengelola data aplikasi menggunakan database MySQL dan PostgreSQL.",
+    ],
+  },
 ];
