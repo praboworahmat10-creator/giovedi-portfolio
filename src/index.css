@@ -136,6 +136,12 @@ h6 {
 }
 
 /* Scrollbar */
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
 ::-webkit-scrollbar {
   width: 8px;
 }

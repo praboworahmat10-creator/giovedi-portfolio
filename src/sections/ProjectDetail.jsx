@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects.js";
 import { ExternalLinkIcon, GithubIcon } from "../components/ui/Icons.jsx";
 
@@ -13,10 +13,44 @@ export function projectSlug(project) {
 
 export default function ProjectDetail({ slug }) {
   const project = projects.find((item) => projectSlug(item) === slug);
+  const imageGalleryRef = useRef(null);
+  const hasArrowControls = project?.imageControls === "arrows";
+  const [canScrollPrevious, setCanScrollPrevious] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const updateScrollControls = useCallback(() => {
+    const gallery = imageGalleryRef.current;
+    if (!gallery) return;
+
+    setCanScrollPrevious(gallery.scrollLeft > 1);
+    setCanScrollNext(gallery.scrollLeft + gallery.clientWidth < gallery.scrollWidth - 1);
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
+
+  useEffect(() => {
+    const gallery = imageGalleryRef.current;
+    if (!hasArrowControls || !gallery) return;
+
+    gallery.scrollLeft = 0;
+    updateScrollControls();
+    window.addEventListener("resize", updateScrollControls);
+
+    return () => {
+      window.removeEventListener("resize", updateScrollControls);
+    };
+  }, [hasArrowControls, slug, updateScrollControls]);
+
+  const scrollGallery = (direction) => {
+    const gallery = imageGalleryRef.current;
+    if (!gallery) return;
+    gallery.scrollBy({
+      left: direction * gallery.clientWidth,
+      behavior: "smooth",
+    });
+  };
 
   const goBack = () => {
     window.location.hash = "projects";
@@ -107,6 +141,101 @@ export default function ProjectDetail({ slug }) {
             </>
           )}
         </section>
+
+        {project.images?.length > 0 && (
+          <section aria-label="Tampilan aplikasi" className="mt-14 border-t border-line pt-10">
+            <p className="font-mono text-xs text-accent">03 / Tampilan aplikasi</p>
+            {project.imageLayout === "horizontal" && !hasArrowControls && (
+              <p className="mt-2 text-sm text-muted">Geser ke samping untuk melihat screenshot lainnya.</p>
+            )}
+            <div
+              className={`mt-6 ${
+                hasArrowControls ? "grid grid-cols-[44px_minmax(0,1fr)_44px] items-center gap-3" : ""
+              }`}
+            >
+              {hasArrowControls && (
+                <button
+                  type="button"
+                  aria-label="Screenshot sebelumnya"
+                  onClick={() => scrollGallery(-1)}
+                  disabled={!canScrollPrevious}
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-line text-xl text-ink transition-colors hover:border-accent hover:text-accent active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-line disabled:hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+                >
+                  <span aria-hidden="true">←</span>
+                </button>
+              )}
+              <div
+                ref={imageGalleryRef}
+                role={project.imageLayout === "horizontal" ? "region" : undefined}
+                aria-label={project.imageLayout === "horizontal" ? "Galeri screenshot, geser horizontal" : undefined}
+                tabIndex={project.imageLayout === "horizontal" ? 0 : undefined}
+                onScroll={hasArrowControls ? updateScrollControls : undefined}
+                className={`${
+                  project.imageLayout === "horizontal"
+                    ? `flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 ${
+                        hasArrowControls ? "scrollbar-hidden" : "gap-4 pb-4"
+                      }`
+                    : "grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3"
+                }`}
+              >
+                {project.images.map((image) => (
+                  <figure
+                    key={image.src}
+                    className={
+                      project.imageLayout === "horizontal"
+                        ? hasArrowControls
+                          ? "w-full shrink-0 snap-start"
+                          : "w-[min(88vw,52rem)] shrink-0 snap-start"
+                        : image.layout === "desktop"
+                          ? "md:col-span-2 xl:col-span-3"
+                          : ""
+                    }
+                  >
+                    <div
+                      className={`flex items-center justify-center overflow-hidden ${
+                        image.layout === "mobile" ? "" : "rounded-xl border border-line bg-[#141416]"
+                      } ${
+                        project.imageLayout === "horizontal"
+                          ? "aspect-video"
+                          : image.layout === "desktop"
+                            ? "aspect-video"
+                            : "h-[32rem] sm:h-[36rem]"
+                      }`}
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        width={image.width}
+                        height={image.height}
+                        loading="lazy"
+                        style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+                        className={`h-full w-full ${
+                          project.imageLayout === "horizontal"
+                            ? "object-contain"
+                            : image.layout === "desktop"
+                              ? "object-cover"
+                              : "object-contain"
+                        }`}
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm text-muted">{image.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              {hasArrowControls && (
+                <button
+                  type="button"
+                  aria-label="Screenshot berikutnya"
+                  onClick={() => scrollGallery(1)}
+                  disabled={!canScrollNext}
+                  className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-line text-xl text-ink transition-colors hover:border-accent hover:text-accent active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-line disabled:hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
+                >
+                  <span aria-hidden="true">→</span>
+                </button>
+              )}
+            </div>
+          </section>
+        )}
       </div>
     </main>
   );

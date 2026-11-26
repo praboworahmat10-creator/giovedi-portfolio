@@ -7,6 +7,40 @@ export const projects = [
     live: "",
     repo: "",
     period: "2025 – 2026",
+    images: [
+      {
+        src: "/projects/attendance-dashboard-desktop.png",
+        alt: "Dashboard sistem presensi pada tampilan desktop",
+        caption: "Dashboard desktop",
+        width: 1366,
+        height: 768,
+        layout: "desktop",
+      },
+      {
+        src: "/projects/attendance-dashboard-mobile-clean.png",
+        alt: "Dashboard sistem presensi pada tampilan iPhone",
+        caption: "Dashboard mobile",
+        width: 768,
+        height: 1559,
+        layout: "mobile",
+      },
+      {
+        src: "/projects/attendance-history-mobile-clean.png",
+        alt: "Riwayat presensi bulanan pada tampilan iPhone",
+        caption: "Riwayat presensi",
+        width: 768,
+        height: 1559,
+        layout: "mobile",
+      },
+      {
+        src: "/projects/attendance-checkin-mobile-clean.png",
+        alt: "Halaman presensi dengan pengenalan wajah dan lokasi GPS",
+        caption: "Presensi dengan pengenalan wajah dan GPS",
+        width: 768,
+        height: 1559,
+        layout: "mobile",
+      },
+    ],
     code: {
       file: "Haversine.php",
       lines: [
@@ -36,6 +70,24 @@ export const projects = [
     live: "",
     repo: "",
     period: "Sep 2024 – Jan 2025",
+    imageLayout: "horizontal",
+    imageControls: "arrows",
+    images: [
+      {
+        src: "/projects/login-crud-login.png",
+        alt: "Halaman login aplikasi PT. Meissa Berkah Teknologi",
+        caption: "Halaman login",
+        width: 1515,
+        height: 768,
+      },
+      {
+        src: "/projects/login-crud-dashboard.png",
+        alt: "Dashboard aplikasi penilaian kinerja pegawai",
+        caption: "Dashboard penilaian kinerja",
+        width: 1518,
+        height: 768,
+      },
+    ],
     code: {
       file: "login.php",
       lines: [
@@ -64,6 +116,17 @@ export const projects = [
     live: "",
     repo: "",
     period: "Sep 2025 – Nov 2025",
+    images: [
+      {
+        src: "/projects/network-topology.png",
+        alt: "Ilustrasi konfigurasi jaringan MikroTik dan access point",
+        caption: "Topologi jaringan MikroTik",
+        width: 768,
+        height: 892,
+        layout: "desktop",
+        objectPosition: "top",
+      },
+    ],
     code: {
       file: "routeros.rsc",
       lines: [
@@ -90,6 +153,45 @@ export const projects = [
     live: "",
     repo: "",
     period: "2026",
+    imageLayout: "horizontal",
+    imageControls: "arrows",
+    images: [
+      {
+        src: "/projects/mahiya-login.png",
+        alt: "Halaman login pelanggan Mahiya & Co.",
+        caption: "Login pelanggan",
+        width: 1522,
+        height: 768,
+      },
+      {
+        src: "/projects/mahiya-home.png",
+        alt: "Halaman utama Mahiya & Co. dengan daftar menu harian",
+        caption: "Halaman utama",
+        width: 1507,
+        height: 768,
+      },
+      {
+        src: "/projects/mahiya-menu.png",
+        alt: "Daftar menu minuman dan dessert Mahiya & Co.",
+        caption: "Daftar menu",
+        width: 1507,
+        height: 768,
+      },
+      {
+        src: "/projects/mahiya-blog.png",
+        alt: "Halaman cerita dan blog Mahiya & Co.",
+        caption: "Cerita dari dapur",
+        width: 1520,
+        height: 768,
+      },
+      {
+        src: "/projects/mahiya-tracking.png",
+        alt: "Halaman pelacakan pesanan dan lokasi kurir Mahiya & Co.",
+        caption: "Live tracking kurir",
+        width: 1500,
+        height: 768,
+      },
+    ],
     code: {
       file: "LiveTracking.php",
       lines: [

@@ -15,19 +15,33 @@ function categoryFor(project) {
 
 function ProjectPreview({ project, index }) {
   const category = categoryFor(project);
+  const previewImage = project.images?.[0];
 
   return (
     <div className="relative h-52 overflow-hidden border-b border-line bg-[#141416]">
-      <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] [background-size:32px_32px]" />
-      <div className="absolute -right-10 -top-16 h-44 w-44 rounded-full border border-accent/15" />
-      <div className="absolute -right-4 -top-10 h-28 w-28 rounded-full border border-accent/10" />
+      {previewImage ? (
+        <img
+          src={previewImage.src}
+          alt={`Pratinjau ${project.title}`}
+          width={previewImage.width}
+          height={previewImage.height}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      ) : (
+        <>
+          <div className="absolute inset-0 opacity-70 [background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] [background-size:32px_32px]" />
+          <div className="absolute -right-10 -top-16 h-44 w-44 rounded-full border border-accent/15" />
+          <div className="absolute -right-4 -top-10 h-28 w-28 rounded-full border border-accent/10" />
+        </>
+      )}
 
-      <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
+      <div className={`relative flex h-full flex-col justify-between p-5 sm:p-6 ${previewImage ? "bg-gradient-to-t from-black/75 via-black/10 to-black/20" : ""}`}>
         <div className="flex items-center justify-between">
           <span className="font-mono text-[11px] tracking-[0.16em] text-accent">
             P/{String(index + 1).padStart(2, "0")}
           </span>
-          <span className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-[10px] text-ink-soft">
+          <span className="rounded-full border border-white/10 bg-black/50 px-2.5 py-1 font-mono text-[10px] text-ink-soft">
             {category}
           </span>
         </div>
